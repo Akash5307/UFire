@@ -1,5 +1,6 @@
 //importing sound effects
-const introMusic=new Audio("./music/introSong.mp3");
+const backgroundMusic=new Audio("./music/backgroundMusic.mp3");
+const introMusic=new Audio("./music/introSo.mp3");
 const shootingSound=new Audio("./music/shooting.wav");
 const killEnemySound=new Audio("./music/killEnemy.mp3");
 const gameOverSound=new Audio("./music/gameOver.wav");
@@ -405,4 +406,11 @@ addEventListener("keypress",(e)=>{
 addEventListener("resize",()=>{
     window.location.reload();
 })
+backgroundMusic.volume = 0.3;
+document.addEventListener("click", () => {
+    backgroundMusic.play().catch((error) => {
+        console.error("Background music playback failed:", error);
+    });
+});
+
 animation();
